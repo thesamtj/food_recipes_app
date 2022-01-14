@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipes_app/recipe.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -51,10 +52,35 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         // TODO: Replace child: Container()
         // 4
-        child: Container(),
+        child: ListView.builder(
+          // 5
+          itemCount: Recipe.samples.length,
+          // 6
+          itemBuilder: (BuildContext context, int index) {
+            // 7
+            // TODO: Update to return Recipe card
+            // TODO: Add GestureDetector
+            return buildRecipeCard(Recipe.samples[index]);
+          },
+        ),
       ),
     );
   }
 
 // TODO: Add buildRecipeCard() here
+  Widget buildRecipeCard(Recipe recipe) {
+    // 1
+    return Card(
+      // 2
+      child: Column(
+        // 3
+        children: <Widget>[
+          // 4
+          Image(image: AssetImage(recipe.imageUrl)),
+          // 5
+          Text(recipe.label),
+        ],
+      ),
+    );
+  }
 }
