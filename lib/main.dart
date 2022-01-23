@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipes_app/recipe.dart';
+import 'recipe_detail.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -60,7 +61,25 @@ class _MyHomePageState extends State<MyHomePage> {
             // 7
             // TODO: Update to return Recipe card
             // TODO: Add GestureDetector
-            return buildRecipeCard(Recipe.samples[index]);
+            // 7
+            return GestureDetector(
+              // 8
+              onTap: () {
+                // 9
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      // 10
+                      // TODO: Replace return with return RecipeDetail()
+                      return RecipeDetail(recipe: Recipe.samples[index]);
+                    },
+                  ),
+                );
+              },
+              // 11
+              child: buildRecipeCard(Recipe.samples[index]),
+            );
           },
         ),
       ),
