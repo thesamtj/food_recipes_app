@@ -2,6 +2,8 @@ class Recipe {
   String label;
   String imageUrl;
   // TODO: Add servings and ingredients here
+  int? servings;
+  List<Ingredient>? ingredients;
 
   Recipe(
     this.label,
