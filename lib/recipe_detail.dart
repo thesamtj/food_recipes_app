@@ -18,6 +18,7 @@ class RecipeDetail extends StatefulWidget {
 // TODO: Add _RecipeDetailState here
 class _RecipeDetailState extends State<RecipeDetail> {
   // TODO: Add _sliderVal here
+  int _sliderVal = 1;
 
   @override
   Widget build(BuildContext context) {
